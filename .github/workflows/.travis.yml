@@ -4,4 +4,4 @@ deploy:
   github_token: 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  # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
-    branch: main
+    branch: master
