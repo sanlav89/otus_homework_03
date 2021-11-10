@@ -37,3 +37,5 @@ cmake --build . --target package
 
 # Описание функций  
 https://sanlav89.github.io/otus_homework_03/namespaceutils.html  
+
+
