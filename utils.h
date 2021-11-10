@@ -35,8 +35,8 @@ namespace utils
     /**
      * @brief print_ip - вывод ip-адреса в целочисленном формате
      * @tparam T - произвольный целочисленный тип
-     * @param ip[in] - ip-адрес, представленный целочисленной переменной
-     * @param out[in] - поток вывода (по умолчанию std::cout)
+     * @param[in] ip - ip-адрес, представленный целочисленной переменной
+     * @param[in] out - поток вывода (по умолчанию std::cout)
      */
     template<typename T,
              typename Fake =
@@ -77,8 +77,8 @@ namespace utils
     /**
      * @brief print_ip - вывод ip-адреса в формате контейнеров std::vector, std::list
      * @tparam T - контейнер типа std::vector или std::list
-     * @param ip[in] - ip-адрес, представленный контейнером
-     * @param out[in] - поток вывода (по умолчанию std::cout)
+     * @param[in] ip - ip-адрес, представленный контейнером
+     * @param[in] out - поток вывода (по умолчанию std::cout)
      */
     template<typename T,
              typename Fake =
