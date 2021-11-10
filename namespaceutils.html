@@ -84,6 +84,10 @@ $(function() {
 <tr class="memitem:aed55749e6be03439d9fae6e7123d9bbe"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#aed55749e6be03439d9fae6e7123d9bbe">print_ip</a> (T &amp;&amp;ip, std::ostream &amp;out=std::cout)</td></tr>
 <tr class="memdesc:aed55749e6be03439d9fae6e7123d9bbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">print_ip - вывод ip-адреса в формате контейнеров std::vector, std::list  <a href="namespaceutils.html#aed55749e6be03439d9fae6e7123d9bbe">Подробнее...</a><br /></td></tr>
 <tr class="separator:aed55749e6be03439d9fae6e7123d9bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98fceb55a7ec4406da72f75aee28f1dc"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a98fceb55a7ec4406da72f75aee28f1dc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceutils.html#a98fceb55a7ec4406da72f75aee28f1dc">print_ip</a> (const std::tuple&lt; Args... &gt; &amp;ip, std::ostream &amp;out=std::cout)</td></tr>
+<tr class="memdesc:a98fceb55a7ec4406da72f75aee28f1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">print_ip - вывод ip-адреса в формате std::tuple  <a href="namespaceutils.html#a98fceb55a7ec4406da72f75aee28f1dc">Подробнее...</a><br /></td></tr>
+<tr class="separator:a98fceb55a7ec4406da72f75aee28f1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
 <div class="textblock"><p >Функции для вывода ip-адресов в разных форматах. </p>
@@ -97,7 +101,7 @@ $(function() {
 </ol>
 </div><h2 class="groupheader">Функции</h2>
 <a id="a725b74b07b30df6a8e6a67eac89278de" name="a725b74b07b30df6a8e6a67eac89278de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a725b74b07b30df6a8e6a67eac89278de">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a725b74b07b30df6a8e6a67eac89278de">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,8 +137,53 @@ $(function() {
 
 </div>
 </div>
+<a id="a98fceb55a7ec4406da72f75aee28f1dc" name="a98fceb55a7ec4406da72f75aee28f1dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98fceb55a7ec4406da72f75aee28f1dc">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void utils::print_ip </td>
+          <td>(</td>
+          <td class="paramtype">const std::tuple&lt; Args... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em> = <code>std::cout</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>print_ip - вывод ip-адреса в формате std::tuple </p>
+<dl class="tparams"><dt>Параметры шаблона</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args...</td><td>- типы std::tuple </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ip</td><td>- ip-адрес, представленный std::tuple </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>- поток вывода (по умолчанию std::cout) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a55b3bae3522f3f6cc1bec69a99edc0c1" name="a55b3bae3522f3f6cc1bec69a99edc0c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55b3bae3522f3f6cc1bec69a99edc0c1">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a55b3bae3522f3f6cc1bec69a99edc0c1">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +228,7 @@ template&lt;typename T , typename Fake  = typename std::enable_if&lt;           
 </div>
 </div>
 <a id="aed55749e6be03439d9fae6e7123d9bbe" name="aed55749e6be03439d9fae6e7123d9bbe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed55749e6be03439d9fae6e7123d9bbe">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aed55749e6be03439d9fae6e7123d9bbe">&#9670;&nbsp;</a></span>print_ip() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
