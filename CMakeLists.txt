@@ -14,15 +14,13 @@ set (
 )
 
 # HEADERS
-#set (
-#    HEADERS
-#        utils.h
-#)
+set (
+    HEADERS
+        utils.h
+)
 
 # EXECUTABLE
 add_executable(print_ip ${SOURCES} ${HEADERS})
-#add_executable(gtest_sample gtest_sample.cpp)
-#add_executable(gtest_customcontainer gtest_customcontainer.cpp)
 
 # PROPERTIES
 set_target_properties (
