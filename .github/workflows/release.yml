@@ -36,11 +36,13 @@ jobs:
           asset_path: ./print_ip-0.0.${{ github.run_number }}-Linux.deb
           asset_name: print_ip-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
-      
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: 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  # Set in the settings page of your repository, as a secure variable
-  keep_history: true
-  on:
-    branch: master
+      - name: Doxygen Action
+        uses: mattnotmitt/doxygen-action@v1.1.0
+        with:
+          doxyfile-path: "./Doxyfile" # default is ./Doxyfile
+          working-directory: "." # default is .
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./html
