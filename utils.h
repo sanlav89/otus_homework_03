@@ -5,6 +5,7 @@
 #include <vector>
 #include <list>
 #include <cassert>
+#include <tuple>
 
 /**
     @brief Функции для вывода ip-адресов в разных форматах.
@@ -100,6 +101,30 @@ namespace utils
             i++;
         }
     }
+
+    /**
+     * @brief print_ip - вывод ip-адреса в формате std::tuple
+     * @tparam Args... - типы std::tuple
+     * @param[in] ip - ip-адрес, представленный std::tuple
+     * @param[in] out - поток вывода (по умолчанию std::cout)
+     */
+    template <typename... Args>
+    void print_ip(const std::tuple<Args...>& ip, std::ostream &out = std::cout)
+    {
+        static_assert(sizeof...(Args) == 4, "Incorrect tuple size");
+        using T0 = typename std::tuple_element<0, std::tuple<Args...> >::type;
+        using T1 = typename std::tuple_element<1, std::tuple<Args...> >::type;
+        using T2 = typename std::tuple_element<2, std::tuple<Args...> >::type;
+        using T3 = typename std::tuple_element<3, std::tuple<Args...> >::type;
+        static_assert(std::is_same<T0, T1>::value, "");
+        static_assert(std::is_same<T0, T2>::value, "");
+        static_assert(std::is_same<T0, T3>::value, "");
+        out << std::get<0>(ip) << ".";
+        out << std::get<1>(ip) << ".";
+        out << std::get<2>(ip) << ".";
+        out << std::get<3>(ip) << std::endl;
+    }
+
 }
 
 #endif // UTILS_H
