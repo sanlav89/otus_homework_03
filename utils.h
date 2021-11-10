@@ -6,13 +6,38 @@
 #include <list>
 #include <cassert>
 
+/**
+    @brief Функции для вывода ip-адресов в разных форматах.
+    1. Адрес может быть представлен в виде произвольного целочисленного типа. Представление
+    не зависит от знака типа. Выводить побайтово, начиная со старшего байта, с символом `.`
+    (символ точки) в качестве разделителя.
+    2. Адрес может быть представлен в виде строки. Выводится как есть.
+    3. Адрес может быть представлен в виде контейнеров `std::list`, `std::vector`. Выводится
+    содержимое контейнера поэлементно и разделяется `.` (одним символом точка).
+    4. Опционально адрес может быть представлен в виде `std::tuple` при условии, что все типы
+    одинаковы. Выводится содержимое поэлементно и разделяется `.` (одним символом
+    точка).
+    @version 1.0
+    @date 10/11/2021
+*/
 namespace utils
 {
+    /**
+     * @brief print_ip - вывод ip-адреса в строковом формате
+     * @param[in] ip - строка с ip-адресом
+     * @param[in] out - поток вывода (по умолчанию std::cout)
+     */
     void print_ip(const std::string &ip, std::ostream &out = std::cout)
     {
         out << ip << std::endl;
     }
 
+    /**
+     * @brief print_ip - вывод ip-адреса в целочисленном формате
+     * @tparam T - произвольный целочисленный тип
+     * @param ip[in] - ip-адрес, представленный целочисленной переменной
+     * @param out[in] - поток вывода (по умолчанию std::cout)
+     */
     template<typename T,
              typename Fake =
              typename std::enable_if<
@@ -28,6 +53,9 @@ namespace utils
             << ((ip_copy >>  0) & 0xFF) << std::endl;
     }
 
+    /**
+     * @cond
+     */
     template<typename T>
     struct is_container {
             static const bool value = false;
@@ -42,7 +70,16 @@ namespace utils
     struct is_container<std::list<U>> {
             static const bool value = true;
     };
+    /**
+     * @endcond
+     */
 
+    /**
+     * @brief print_ip - вывод ip-адреса в формате контейнеров std::vector, std::list
+     * @tparam T - контейнер типа std::vector или std::list
+     * @param ip[in] - ip-адрес, представленный контейнером
+     * @param out[in] - поток вывода (по умолчанию std::cout)
+     */
     template<typename T,
              typename Fake =
              typename std::enable_if<
