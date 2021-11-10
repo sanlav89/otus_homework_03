@@ -34,3 +34,6 @@ cd <otus_homework_03_dir>
 cmake . -DPATCH_VERSION=123  
 cmake --build .  
 cmake --build . --target package  
+
+# Описание функций  
+https://sanlav89.github.io/otus_homework_03/namespaceutils.html  
